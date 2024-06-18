@@ -59,14 +59,14 @@ services:
       - arango
       - nats
 
-  # CRSP
-  crsp:
+  # event-director
+  event-director:
     build:
-      context: https://github.com/frmscoe/channel-router-setup-processor.git#${CRSP_BRANCH}
+      context: https://github.com/frmscoe/channel-router-setup-processor.git#${EVENT_DIRECTOR_BRANCH}
       args:
         - GH_TOKEN
     env_file:
-      - env/crsp.env
+      - env/event-director.env
       - .env
     restart: always
     depends_on:
